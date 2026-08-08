@@ -58,7 +58,7 @@ jobs:
 
       - name: Check if the PR body is containing the required closing message
         if: contains(github.event.pull_request.body, 'Closes')
-        run: echo "Found _Closes_ message with autolinked issue in the body of PR $NUMBER"
+        run: echo "Found _Closes_ message with autolinked issue in the body of PR ${{ github.event.pull_request.number }}"
         env:
           NUMBER: ${{ github.event.pull_request.number }}
 
